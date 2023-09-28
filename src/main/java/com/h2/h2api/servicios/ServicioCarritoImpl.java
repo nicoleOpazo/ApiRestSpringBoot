@@ -53,8 +53,8 @@ public class ServicioCarritoImpl implements ServicioCarrito {
         return repositorioCarrito.findAll();
     }
 
-    /*@Override
+    @Override
     public Carrito obtenerCarritoPorUsuario(Usuario usuario) {
         return repositorioCarrito.findCarritoByUsuario(usuario);
-    }*/
+    }
 }

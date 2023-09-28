@@ -14,7 +14,7 @@ public interface ServicioCarrito {
 
     boolean eliminarCarrito(Long id);
 
-    //Carrito obtenerCarritoPorUsuario(Usuario usuario);
+    Carrito obtenerCarritoPorUsuario(Usuario usuario);
 
     List<Carrito> obtenerTodosLosCarritos();
 }

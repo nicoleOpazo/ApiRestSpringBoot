@@ -19,7 +19,7 @@ public class ControladorCarrito {
     private final ServicioCarrito servicioCarrito;
     private final ServicioUsuario servicioUsuario;
 
-    @PostMapping()
+    /*@PostMapping()
     public ResponseEntity<Carrito> guardarCarrito(@RequestBody Carrito carritoDeUsuario) {
         if (carritoDeUsuario.getUsuario() != null) {
             carritoDeUsuario.getUsuario().setCarrito(carritoDeUsuario);
@@ -27,7 +27,7 @@ public class ControladorCarrito {
 
         Carrito nuevoCarrito = servicioCarrito.guardarCarrito(carritoDeUsuario);
         return new ResponseEntity<>(nuevoCarrito, HttpStatus.CREATED);
-    }
+    }*/
 
     @GetMapping("/{idCarrito}")
     public ResponseEntity<Carrito> obtenerCarrito(@PathVariable("idCarrito") Long idCarrito) {
@@ -41,7 +41,7 @@ public class ControladorCarrito {
         return new ResponseEntity<>(carritoModificado, HttpStatus.OK);
     }
 
-    @DeleteMapping("/{idCarrito}")
+    /*@DeleteMapping("/{idCarrito}")
     public ResponseEntity<Void> eliminarCarrito(@PathVariable("idCarrito") Long idCarrito) {
         boolean eliminado = servicioCarrito.eliminarCarrito(idCarrito);
         if (eliminado) {
@@ -49,7 +49,7 @@ public class ControladorCarrito {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-    }
+    }*/
 
     @GetMapping("/todoscarritos")
     public ResponseEntity<List<Carrito>> obtenerTodosLosCarritos() {
@@ -57,7 +57,7 @@ public class ControladorCarrito {
         return new ResponseEntity<>(carritos, HttpStatus.OK);
     }
 
-    /*@GetMapping("/usuario/{idUsuario}")
+    @GetMapping("/usuario/{idUsuario}")
     public ResponseEntity<Carrito> obtenerCarritoPorUsuario(@PathVariable("idUsuario") Long idUsuario) {
         Usuario usuario = servicioUsuario.obtenerUsuario(idUsuario);
         Carrito carrito = servicioCarrito.obtenerCarritoPorUsuario(usuario);
@@ -66,5 +66,5 @@ public class ControladorCarrito {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-    }*/
+    }
 }

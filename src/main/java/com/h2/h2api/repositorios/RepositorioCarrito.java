@@ -7,6 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RepositorioCarrito extends JpaRepository<Carrito, Long> {
-    //Obtener el carrito de compras de un usuario
     Carrito findCarritoByUsuario(Usuario usuario);
 }
