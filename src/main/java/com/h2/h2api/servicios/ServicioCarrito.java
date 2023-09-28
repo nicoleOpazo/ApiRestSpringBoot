@@ -3,6 +3,8 @@ package com.h2.h2api.servicios;
 import com.h2.h2api.modelos.Carrito;
 import com.h2.h2api.modelos.Usuario;
 
+import java.util.List;
+
 public interface ServicioCarrito {
     Carrito guardarCarrito(Carrito carrito);
 
@@ -12,6 +14,7 @@ public interface ServicioCarrito {
 
     boolean eliminarCarrito(Long id);
 
-    //Obtener el carrito de un usuario
-    Carrito obtenerCarritoPorUsuario(Usuario usuario);
+    //Carrito obtenerCarritoPorUsuario(Usuario usuario);
+
+    List<Carrito> obtenerTodosLosCarritos();
 }

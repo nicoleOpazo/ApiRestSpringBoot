@@ -17,8 +17,12 @@ public class ControladorUsuario {
     private final ServicioUsuario servicioUsuario;
 
     @PostMapping
-    public ResponseEntity<Usuario> guardarUsuario(@RequestBody Usuario usuario) {
-        Usuario nuevoUsuario = servicioUsuario.guardarUsuario(usuario);
+    public ResponseEntity<Usuario> guardarUsuario(@RequestBody Usuario usuarioConCarrito) {
+        if (usuarioConCarrito.getCarrito() != null) {
+            usuarioConCarrito.getCarrito().setUsuario(usuarioConCarrito);
+        }
+
+        Usuario nuevoUsuario = servicioUsuario.guardarUsuario(usuarioConCarrito);
         return new ResponseEntity<>(nuevoUsuario, HttpStatus.CREATED);
     }
 

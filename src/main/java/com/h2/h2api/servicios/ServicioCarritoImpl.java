@@ -7,6 +7,8 @@ import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class ServicioCarritoImpl implements ServicioCarrito {
@@ -47,7 +49,12 @@ public class ServicioCarritoImpl implements ServicioCarrito {
     }
 
     @Override
+    public List<Carrito> obtenerTodosLosCarritos() {
+        return repositorioCarrito.findAll();
+    }
+
+    /*@Override
     public Carrito obtenerCarritoPorUsuario(Usuario usuario) {
         return repositorioCarrito.findCarritoByUsuario(usuario);
-    }
+    }*/
 }

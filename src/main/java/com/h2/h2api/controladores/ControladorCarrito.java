@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/carritos")
 @RequiredArgsConstructor
@@ -17,11 +19,13 @@ public class ControladorCarrito {
     private final ServicioCarrito servicioCarrito;
     private final ServicioUsuario servicioUsuario;
 
-    @PostMapping("/{idUsuario}")
-    public ResponseEntity<Carrito> guardarCarrito(@RequestBody Carrito carrito, @PathVariable("idUsuario") Long idUsuario) {
-        Usuario usuario = servicioUsuario.obtenerUsuario(idUsuario);
-        carrito.setUsuario(usuario);
-        Carrito nuevoCarrito = servicioCarrito.guardarCarrito(carrito);
+    @PostMapping()
+    public ResponseEntity<Carrito> guardarCarrito(@RequestBody Carrito carritoDeUsuario) {
+        if (carritoDeUsuario.getUsuario() != null) {
+            carritoDeUsuario.getUsuario().setCarrito(carritoDeUsuario);
+        }
+
+        Carrito nuevoCarrito = servicioCarrito.guardarCarrito(carritoDeUsuario);
         return new ResponseEntity<>(nuevoCarrito, HttpStatus.CREATED);
     }
 
@@ -47,7 +51,13 @@ public class ControladorCarrito {
         }
     }
 
-    @GetMapping("/usuario/{idUsuario}")
+    @GetMapping("/todoscarritos")
+    public ResponseEntity<List<Carrito>> obtenerTodosLosCarritos() {
+        List<Carrito> carritos = servicioCarrito.obtenerTodosLosCarritos();
+        return new ResponseEntity<>(carritos, HttpStatus.OK);
+    }
+
+    /*@GetMapping("/usuario/{idUsuario}")
     public ResponseEntity<Carrito> obtenerCarritoPorUsuario(@PathVariable("idUsuario") Long idUsuario) {
         Usuario usuario = servicioUsuario.obtenerUsuario(idUsuario);
         Carrito carrito = servicioCarrito.obtenerCarritoPorUsuario(usuario);
@@ -56,5 +66,5 @@ public class ControladorCarrito {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-    }
+    }*/
 }

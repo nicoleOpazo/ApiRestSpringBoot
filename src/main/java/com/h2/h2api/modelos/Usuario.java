@@ -1,5 +1,6 @@
 package com.h2.h2api.modelos;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,7 +30,10 @@ public class Usuario {
     @Column(nullable = false)
     private LocalDateTime fechaCreacion;
 
-    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
+
+    @OneToOne(mappedBy ="usuario", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    @JsonManagedReference
     private Carrito carrito;
 
 }
