@@ -19,13 +19,13 @@ Siga estos pasos para descargar, compilar y ejecutar la solución:
   3. **Acceder a la API**:
   La API estará disponible en http://localhost:8080
 
-Endpoints:
+## Endpoints:
 
-Crear un Usuario (POST)
-Crea un nuevo usuario con la opción de agregar un carrito.
-URL: /usuarios
-Método: POST
-Ejemplo de JSON de Solicitud:
+### Crear un Usuario (POST)
+- Crea un nuevo usuario con la opción de agregar un carrito.
+- URL: /usuarios
+- Método: POST
+- Ejemplo de JSON de Solicitud:
 {
     "nombre": "usuario",
     "edad": 26,
@@ -38,16 +38,16 @@ Ejemplo de JSON de Solicitud:
     }
 }
 
-Obtener un Usuario (GET)
-Obtiene un usuario por su ID.
-URL: /usuarios/{id}
-Método: GET
+### Obtener un Usuario (GET)
+- Obtiene un usuario por su ID.
+- URL: /usuarios/{id}
+- Método: GET
 
-Actualizar un Usuario (PUT)
-Actualiza la información de un usuario existente por su ID.
-URL: /usuarios/{id}
-Método: PUT
-Ejemplo de JSON de Solicitud:
+### Actualizar un Usuario (PUT)
+- Actualiza la información de un usuario existente por su ID.
+- URL: /usuarios/{id}
+- Método: PUT
+- Ejemplo de JSON de Solicitud:
 {
     "nombre": "usuario_actualizado",
     "edad": 27,
@@ -55,39 +55,39 @@ Ejemplo de JSON de Solicitud:
     "fechaCreacion": "2023-09-27T11:00:00"
 }
 
-Eliminar un Usuario (DELETE)
-Elimina un usuario por su ID.
-URL: /usuarios/{id}
-Método: DELETE
+### Eliminar un Usuario (DELETE)
+- Elimina un usuario por su ID.
+- URL: /usuarios/{id}
+- Método: DELETE
 
-Obtener todos los Usuarios (GET)
-Obtiene la lista de todos los usuarios.
-URL: /usuarios/todos
-Método: GET
+### Obtener todos los Usuarios (GET)
+- Obtiene la lista de todos los usuarios.
+- URL: /usuarios/todos
+- Método: GET
 
 
-Obtener un Carrito por su ID (GET)
-Obtiene un carrito por su ID.
-URL: /carritos/{idCarrito}
-Método: GET
+### Obtener un Carrito por su ID (GET)
+- Obtiene un carrito por su ID.
+- URL: /carritos/{idCarrito}
+- Método: GET
 
-Actualizar un Carrito (PUT)
-Actualiza la información de un carrito existente por su ID.
-URL: /carritos/{idCarrito}
-Método: PUT
-Ejemplo de JSON de Solicitud:
+### Actualizar un Carrito (PUT)
+- Actualiza la información de un carrito existente por su ID.
+- URL: /carritos/{idCarrito}
+- Método: PUT
+- Ejemplo de JSON de Solicitud:
 {
     "codigo": "CART001_actualizado",
     "total": 200.00,
     "fechaCompra": "2023-09-28T11:00:00"
 }
 
-Obtener el Carrito de un Usuario (GET)
-Obtiene el carrito de compras de un usuario por su ID.
-URL: /carritos/usuario/{idUsuario}
-Método: GET
+### Obtener el Carrito de un Usuario (GET)
+- Obtiene el carrito de compras de un usuario por su ID.
+- URL: /carritos/usuario/{idUsuario}
+- Método: GET
 
-Obtener todos los Carritos (GET)
-Obtiene una lista de todos los carritos.
-URL: /carritos/todoscarritos
-Método: GET
+### Obtener todos los Carritos (GET)
+- Obtiene una lista de todos los carritos.
+- URL: /carritos/todoscarritos
+- Método: GET
