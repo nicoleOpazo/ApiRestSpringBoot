@@ -26,6 +26,7 @@ Siga estos pasos para descargar, compilar y ejecutar la solución:
 - URL: /usuarios
 - Método: POST
 - Ejemplo de JSON de Solicitud:
+```json
 {
     "nombre": "usuario",
     "edad": 26,
@@ -37,6 +38,7 @@ Siga estos pasos para descargar, compilar y ejecutar la solución:
         "fechaCompra": "2023-09-28T10:00:00"
     }
 }
+```
 
 ### Obtener un Usuario (GET)
 - Obtiene un usuario por su ID.
@@ -48,12 +50,14 @@ Siga estos pasos para descargar, compilar y ejecutar la solución:
 - URL: /usuarios/{id}
 - Método: PUT
 - Ejemplo de JSON de Solicitud:
+```json
 {
     "nombre": "usuario_actualizado",
     "edad": 27,
     "activo": true,
     "fechaCreacion": "2023-09-27T11:00:00"
 }
+```
 
 ### Eliminar un Usuario (DELETE)
 - Elimina un usuario por su ID.
@@ -76,11 +80,13 @@ Siga estos pasos para descargar, compilar y ejecutar la solución:
 - URL: /carritos/{idCarrito}
 - Método: PUT
 - Ejemplo de JSON de Solicitud:
+```json
 {
     "codigo": "CART001_actualizado",
     "total": 200.00,
     "fechaCompra": "2023-09-28T11:00:00"
 }
+```
 
 ### Obtener el Carrito de un Usuario (GET)
 - Obtiene el carrito de compras de un usuario por su ID.
